@@ -25,22 +25,32 @@ for (let i = 0; i < arr.length; i++) {
             break;
     }
     gameScores.push(us + game)
-    console.log(`${gameScores.length}: ${us}  ${them} ${game} ${((us-them)%3)} ${us + game}`)
 }
 console.log("Part 1 Result: " + gameScores.reduce((a,b)=>a+b, 0))
 
-// // shifted to array of all totals from original solution
-// currentCalories = 0
-// let totals = []
-// for (let i = 1; i < arr.length; i++) {
-//     if (arr[i].length > 0){
-//         currentCalories += parseInt(arr[i])
-//     }else{
-//         totals.push(currentCalories)
-//         currentCalories = 0
-//     }
-// }
-// totals = totals.sort((a,b) => b-a)
+gameScores = []
+for (let i = 0; i < arr.length; i++) {
+    let us = usValue[arr[i][1]]
+    let them = themValue[arr[i][0]]
 
+    let game = 0
+    switch (us) {
+        // lose
+        case 1:
+            game = 0 + (them == 1 ? 3 : (them - 1))
 
-// console.log("Part 2 Result: " + (totals[0] + totals[1] + totals[2]))
+            break;
+
+        // draw
+        case 2:
+            game = 3 + them
+            break;
+
+        // win
+        case 3:
+            game = 6 + (them == 3 ? 1 : (them + 1))
+            break;
+    }
+    gameScores.push(game)
+}
+console.log("Part 2 Result: " + gameScores.reduce((a,b)=>a+b, 0))
