@@ -1,9 +1,9 @@
 const fs = require('fs');
-let arr = [] 
-fs.readFileSync('day02-input.txt').toString().split("\n").forEach(row => {arr.push(row.split(' '))});
+let arr = []
+fs.readFileSync('day02-input.txt').toString().split("\n").forEach(row => { arr.push(row.split(' ')) });
 
-let usValue = {'X': 1, 'Y': 2, 'Z' : 3}
-let themValue = {'A': 1, 'B': 2, 'C' : 3}
+let usValue = { 'X': 1, 'Y': 2, 'Z': 3 }
+let themValue = { 'A': 1, 'B': 2, 'C': 3 }
 
 let gameScores = []
 for (let i = 0; i < arr.length; i++) {
@@ -11,7 +11,7 @@ for (let i = 0; i < arr.length; i++) {
     let them = themValue[arr[i][0]]
 
     let game = 0
-    switch (us-them) {
+    switch (us - them) {
         case 0:
             game = 3
             break;
@@ -26,7 +26,7 @@ for (let i = 0; i < arr.length; i++) {
     }
     gameScores.push(us + game)
 }
-console.log("Part 1 Result: " + gameScores.reduce((a,b)=>a+b, 0))
+console.log("Part 1 Result: " + gameScores.reduce((a, b) => a + b, 0))
 
 gameScores = []
 for (let i = 0; i < arr.length; i++) {
@@ -52,4 +52,4 @@ for (let i = 0; i < arr.length; i++) {
     }
     gameScores.push(game)
 }
-console.log("Part 2 Result: " + gameScores.reduce((a,b)=>a+b, 0))
+console.log("Part 2 Result: " + gameScores.reduce((a, b) => a + b, 0))
