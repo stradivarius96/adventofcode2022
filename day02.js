@@ -38,7 +38,6 @@ for (let i = 0; i < arr.length; i++) {
         // lose
         case 1:
             game = 0 + (them == 1 ? 3 : (them - 1))
-
             break;
 
         // draw
