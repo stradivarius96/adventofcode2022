@@ -13,16 +13,19 @@ let stacks = {
     "9": []
 }
 
-for (let j = 0; j < 8; j++) {
+// iterate through the initial stacks map portion of the input
+// the "top" of the stack is the front of the array
+
+for (let j = 0; j < 8; j++) {         // 8 rows of instructions
     let row = arr[j].split('')
-    for (let i = 0; i < 9; i++) {
-        if (row[i * 4 + 1] != ' ') {
+    for (let i = 0; i < 9; i++) {     // 9 stacks to fill
+        if (row[i * 4 + 1] != ' ') {  // crate every 4 characters
             stacks[i + 1].push(row[i * 4 + 1])
         }
     }
 }
 
-
+// iterate through the instructions portion of the input
 for (let k = 10; k < arr.length; k++) {
 
     let row = arr[k].split(' ')
@@ -50,15 +53,19 @@ stacks = {
     "9": []
 }
 
-for (let j = 0; j < 8; j++) {
+// iterate through the initial stacks map portion of the input
+// the "top" of the stack is the front of the array
+
+for (let j = 0; j < 8; j++) {         // 8 rows of instructions
     let row = arr[j].split('')
-    for (let i = 0; i < 9; i++) {
-        if (row[i * 4 + 1] != ' ') {
+    for (let i = 0; i < 9; i++) {     // 9 stacks to fill
+        if (row[i * 4 + 1] != ' ') {  // crate every 4 characters
             stacks[i + 1].push(row[i * 4 + 1])
         }
     }
 }
 
+// iterate through the instructions portion of the input
 for (let k = 10; k < arr.length; k++) {
     let row = arr[k].split(' ')
     let queue = []
